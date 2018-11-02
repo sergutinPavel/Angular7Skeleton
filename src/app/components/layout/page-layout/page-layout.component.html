@@ -1,0 +1,27 @@
+
+<div class="app-page-layout__wrapper">
+  <!--(click)="toggleSidebar()"-->
+  <header class="app-page-layout__header page-header">
+    <!--<button (click)="toggleSidebar()">sidebar</button>-->
+    <div class="page-header__toggle">
+      <div class="toggle-menu" [ngClass]="{'on': expandSidebar}" (click)="toggleSidebar()">
+        <span></span>
+      </div>
+    </div>
+    <div class="page-header__text">
+      page header
+    </div>
+    <div class="page-header__actions">
+      <div class="btn page-action-btn" (click)="logout()">Logout</div>
+    </div>
+
+
+  </header>
+  <main class="app-page-layout__container">
+    <app-sidebar class="app-sidebar app-page-layout__sidebar"
+                 [ngClass]="{'open': expandSidebar}">
+    </app-sidebar>
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="app-page-layout__footer">footer</footer>
+</div>

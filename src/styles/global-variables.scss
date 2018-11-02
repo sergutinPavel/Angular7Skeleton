@@ -1,0 +1,73 @@
+@import '~@angular/material/theming';
+
+//typography
+
+// colors
+
+$app-black-color: #000;
+$app-shadow-aaa-dark-color: #aaa;
+$app-shadow-bbb-dark-color: #bbb;
+$app-shadow-dark-color: #ddd;
+$app-shadow-color: #eee;
+$app-shadow-light-color: #efefef;
+$app-light-color: #fff;
+
+$app-rose-color: #e91e63;
+//$app-primary-color: #734b6d;
+//$app-primary-color--dark: #42275a;
+$app-primary-color: #6c4673;
+$app-primary-color--dark: #452a5f;
+$app-purple-color: #9c27b0;
+$app-purple-color--dark: #7b1fa2;
+$app-secondary-color: #f44336;
+$app-secondary-color--dark: #d32f2f;
+$app-blue-color: #00bcd4;
+$app-blue-color--dark: #099bc1;
+$app-green-color: #4caf50;
+$app-green-color--dark: #298f3e;
+$app-yellow-color: #ff9800;
+$app-yellow-color--dark: #d27d00;
+
+
+// sizes
+$app-l-radius: 1.2rem;
+$app-m-radius: .6rem;
+$app-s-radius: .3rem;
+$app-page-header-height: 6rem;
+
+
+// always include only once per project
+@include mat-core();
+// define 3 theme color
+// mat-palette accepts $palette-name, main, lighter and darker variants
+//$mat-light-blue
+//$mat-purple
+$my-theme-primary: mat-palette($mat-light-blue, 700, 300, 900);
+$my-theme-accent: mat-palette($mat-purple);
+$my-theme-warn: mat-palette($mat-deep-orange, A200);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$my-theme: mat-light-theme(
+  $my-theme-primary,
+  $my-theme-accent,
+  $my-theme-warn
+);
+$custom-typography: mat-typography-config(
+        $font-family: 'Roboto Condensed',
+        $headline: mat-typography-level(3.2rem, 4.8rem, 700),
+        $body-1: mat-typography-level(1.6rem, 2.4rem, 500)
+);
+
+// specify theme class eg: <body class="custom-mat-purlpe-theme"> ... </body>
+.custom-mat-purple-theme {
+  // Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+  @include mat-base-typography($custom-typography);
+  // Override typography for a specific Angular Material components.
+  @include mat-checkbox-typography($custom-typography);
+  // Override typography for all Angular Material, including mat-base-typography and all components.
+  @include angular-material-typography($custom-typography);
+
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($my-theme);
+
+}

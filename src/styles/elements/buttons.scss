@@ -1,0 +1,183 @@
+.btn {
+  font-size: 1.4rem;
+}
+.btn.mat-button {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  border-radius: .4rem;
+  padding: 1rem 3rem;
+  box-shadow: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  &:active {
+    //box-shadow: none;
+    //border: none;
+  }
+  &:not(:disabled):not(.disabled):active:focus {
+    //box-shadow: none;
+    //border: none;
+  }
+  &:disabled {
+    //box-shadow: none;
+    //border: none;
+    cursor: not-allowed;
+  }
+}
+//sizes
+.btn.mat-button.btn-small {
+  font-size: 1.2rem;
+  padding: .2rem 1.6rem;
+  min-width: auto;
+}
+.btn.mat-button.btn-large {
+  font-size: 1.6rem;
+  padding: 1.6rem 3.4rem;
+}
+
+@mixin btn-style($color, $light-color, $dark-color, $text-color, $ripple-color) {
+  background-color: $color;
+  color: $app-light-color;
+  @include mat-ripple-theme($ripple-color);
+  .mat-button-focus-overlay {
+    background-color: rgba($light-color, .12);
+    color: $text-color;
+  }
+  &:active,
+  &:not(:disabled):not(.disabled):active:focus {
+    background-color: $dark-color;
+    color: $text-color;
+  }
+  &:disabled {
+    background-color: $light-color;
+    color: $dark-color;
+  }
+}
+
+.custom-mat-purple-theme .btn.btn-default {
+  @include btn-style(mat-color($my-theme-primary, 700),
+          rgba(mat-color($my-theme-primary, 700), .4),
+          mat-color($my-theme-primary, 900),
+          $app-light-color,
+          mat-color($my-theme-primary, 700));
+  background-color: rgba(mat-color($my-theme-primary, 700), 0);
+  color: mat-color($my-theme-primary, 700);
+  &:hover {
+    background-color: rgba(mat-color($my-theme-primary, 700), 0.15);
+  }
+}
+.custom-mat-purple-theme .btn.btn-primary {
+  @include btn-style(mat-color($my-theme-primary, 700),
+          mat-color($my-theme-primary, 300),
+          mat-color($my-theme-primary, 900),
+          $app-light-color,
+          mat-color($my-theme-primary, 300));
+}
+.custom-mat-purple-theme .btn.btn-success {
+  @include btn-style($app-green-color,
+          rgba($app-green-color, .4),
+          $app-green-color--dark,
+          $app-light-color,
+          $app-light-color);
+}
+.custom-mat-purple-theme .btn.btn-info {
+  @include btn-style($app-blue-color,
+          rgba($app-blue-color, .4),
+          $app-blue-color--dark,
+          $app-light-color,
+          $app-light-color);
+}
+.custom-mat-purple-theme .btn.btn-warning {
+  @include btn-style($app-yellow-color,
+          rgba($app-yellow-color, .4),
+          $app-yellow-color--dark,
+          $app-light-color,
+          $app-light-color);
+}
+.custom-mat-purple-theme .btn.btn-danger {
+  @include btn-style($app-secondary-color,
+          rgba($app-secondary-color, .4),
+          $app-secondary-color--dark,
+          $app-light-color,
+          $app-light-color);
+}
+
+.btn.page-action-btn {
+  position: relative;
+  margin: 0 .4rem;
+  background-color: transparent;
+  transition: all .3s ease-in;
+  padding: 1rem;
+  text-transform: capitalize;
+  font-weight: 400;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($app-light-color, .1);
+    transition: all .3s ease-out;
+  }
+  &:active,
+  &:not(:disabled):not(.disabled):active:focus {
+    background-color: rgba($app-light-color, .2);
+    border-color: rgba($app-light-color, .4);
+    transition: all .3s ease-out;
+  }
+}
+
+.toggle-menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin: 0 1rem;
+  span:after,
+  span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -240%
+  }
+  span:after {
+    top: auto;
+    bottom: -240%;
+  }
+  span {
+    position: relative;
+    display: block;
+  }
+  span,
+  span:after,
+  span:before {
+    width: 100%;
+    height: .24rem;
+    background-color: $app-light-color;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: $app-s-radius;
+  }
+  &.on span {
+    background-color: transparent;
+  }
+  &.on span:before {
+    transform: rotate(45deg);
+    top: -50%
+  }
+  &.on span:after {
+    transform: rotate(-45deg);
+    top: -50%;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media all and (min-width: 2200px) {
+  .toggle-menu {
+    span:after,
+    span:before {
+      height: .2rem;
+    }
+  }
+}
+@media all and (max-width: 992px) {}
+@media all and (max-width: 768px) {}

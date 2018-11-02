@@ -1,0 +1,60 @@
+.page-sidebar {
+  position: relative;
+  //margin-top: $app-page-header-height;
+  padding: .5rem;
+  flex: 1;
+  width: 100%;
+  max-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.sidebar-nav {
+  .sidebar-nav__item {
+    position: relative;
+    margin-bottom: .1rem;
+    background-color: inherit;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($app-light-color, .1);
+      transition: all .3s ease-out;
+    }
+    &:active,
+    &:not(:disabled):not(.disabled):active:focus {
+      background-color: rgba($app-light-color, .2);
+      border-color: rgba($app-light-color, .4);
+      transition: all .3s ease-out;
+    }
+  }
+  .sidebar-nav__icon {
+    //width: 2.8rem;
+    //height: 2.8rem;
+    flex: 1 1;
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebar-nav__text {
+    flex: 1;
+    padding-left: 1rem;
+  }
+
+}
+.app-sidebar.open .sidebar-nav .sidebar-nav__text {
+  transition: all 0.4s ease-out;
+}
+.app-sidebar:not(.open) .sidebar-nav .sidebar-nav__text {
+  opacity: 0;
+  transition: all 0.4s ease-in;
+  flex: 0;
+  justify-content: center;
+}
+

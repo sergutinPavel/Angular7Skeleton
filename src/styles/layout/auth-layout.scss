@@ -1,0 +1,95 @@
+.auth-layout {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: $app-shadow-light-color;
+  .auth-layout__container {
+    position: relative;
+    //flex: 1 1;
+    //max-width: 50rem;
+    min-width: 35rem;
+    box-shadow: 0 0 2rem $app-shadow-bbb-dark-color;
+    background-color: $app-light-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: $app-m-radius;
+  }
+  .auth-layout__form {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .auth-layout__header,
+  .auth-layout__body,
+  .auth-layout__actions {
+    flex: 1;
+    width: 100%;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .auth-layout__header {
+    //margin: -4rem 2rem 1.5rem;
+    //box-sizing: padding-box;
+    padding: 0rem 2rem;
+
+  }
+  .auth-layout__body {
+    padding: 4rem 2rem 0;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .auth-layout__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .auth-layout__input.cdk-text-field-autofill-monitored:-webkit-autofill {
+    background-color: $app-light-color !important;
+    box-shadow: 0 0 0 1000px $app-light-color inset !important;
+  }
+}
+
+.auth-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  @include gradient-background($app-primary-color, $app-primary-color--dark, $app-light-color);
+  @include box-shadow-bottom($app-black-color, $app-primary-color);
+  border-radius: $app-s-radius;
+  padding: 3rem 3rem 5rem;
+  margin: -4rem 0 0;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.auth-body {
+  .mat-form-field,
+  .mat-form-field-infix {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .auth-layout {
+    .auth-layout__container {
+      min-width: auto;
+      width: 100%;
+      margin: 0 10%;
+    }
+  }
+}

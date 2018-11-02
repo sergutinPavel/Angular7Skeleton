@@ -1,0 +1,60 @@
+<!--<p>-->
+  <!--example works!-->
+<!--</p>-->
+
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Data Table">
+    <mat-accordion class="dt-filters">
+      <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Filters
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>
+          custom forms
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-table class="" [dataSource]="dataTableList" #table
+               matSort [matSortActive]="sortingParams.orderBy" [matSortDirection]="sortingParams.order"
+               matSortDisableClear (matSortChange)="sortingChanged($event)">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef
+                         mat-sort-header
+                         matRipple
+                         class="mat-header-cell__sortable">#</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{item.id}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef
+                         mat-sort-header
+                         matRipple
+                         class="mat-header-cell__sortable">Name</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{item.name}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+    <mat-paginator #paginator
+                   class=""
+                   [pageIndex]="DTPagination.current_page - 1"
+                   [length]="DTPagination.total"
+                   [pageSize]="DTPagination.per_page"
+                   [pageSizeOptions]="[10, 20, 50]"
+                   [showFirstLastButtons]="true"
+                   (page)="pageChanged($event)">
+    </mat-paginator>
+  </mat-tab>
+  <mat-tab label="Second">Content 2</mat-tab>
+  <mat-tab label="Third">Content 3</mat-tab>
+</mat-tab-group>
+
+
+
+

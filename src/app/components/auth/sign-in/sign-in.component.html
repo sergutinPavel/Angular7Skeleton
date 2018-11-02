@@ -1,0 +1,40 @@
+<div class="auth-layout">
+
+  <div class="auth-layout__container">
+    <form class="auth-layout__form"
+          [formGroup]="signInForm"
+          (ngSubmit)="onSubmit(signInForm)" novalidate>
+
+      <div class="auth-layout__header">
+        <div class="auth-header">
+          Welcome
+        </div>
+      </div>
+      <div class="auth-layout__body auth-body">
+
+        <mat-form-field>
+          <mat-label>Login</mat-label>
+          <input matInput class="auth-layout__input" name="login"
+                 placeholder="you@mail.com" formControlName="email">
+          <!--<mat-hint>Hint</mat-hint>-->
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput class="auth-layout__input" name="password"
+                 placeholder="******" formControlName="password">
+          <!--<mat-hint>Hint</mat-hint>-->
+        </mat-form-field>
+
+      </div>
+
+      <div class="auth-layout__actions">
+        <button mat-button class="btn btn-default btn-large" type="submit" [disabled]="(userStatus | async).loading">
+          Sign in
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

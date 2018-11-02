@@ -1,0 +1,25 @@
+html {
+  font-size: 10px;
+}
+body {
+  @include primary-font();
+  overflow: hidden;
+  font-size: 1.6rem;
+}
+
+@media all and (min-width: 2200px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media all and (max-width: 992px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media all and (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
+}
+

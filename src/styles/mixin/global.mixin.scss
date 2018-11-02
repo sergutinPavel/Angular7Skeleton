@@ -1,0 +1,40 @@
+@mixin primary-font() {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+@mixin thin-font() {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+@mixin serif-font() {
+  font-family: 'EB Garamond', serif;
+}
+@mixin curve-font() {
+  //not included
+  font-family: "Roboto Slab", "Times New Roman", serif;
+}
+
+//ripple effect for buttons
+@mixin mat-ripple-theme($color) {
+  .mat-ripple-element {
+    background-color: rgba($color, .4);
+  }
+}
+@mixin mat-ripple-theme--light($color) {
+  .mat-ripple-element {
+    background-color: rgba($color, .05);
+  }
+}
+@mixin gradient-background($color1, $color2, $text-color, $angle: 60deg) {
+  background: $color1;
+  background: linear-gradient($angle, $color1, $color2);
+  color: $text-color;
+}
+@mixin box-shadow-bottom($shadow-color, $accent-color) {
+  box-shadow: 0 .5rem 2rem 0 rgba($shadow-color, .2), 0 1.5rem 2.2rem -1rem rgba($accent-color, 0.6);
+}
+@mixin box-shadow-bottom--thin($shadow-color, $accent-color) {
+  box-shadow: 0 .5rem 1rem .2rem rgba($shadow-color, .2), 0 0 .5rem .3rem rgba($accent-color, 0.6);
+}

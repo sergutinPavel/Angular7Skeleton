@@ -1,0 +1,30 @@
+.mat-header-cell.mat-header-cell__sortable {
+  cursor: pointer;
+  @include mat-ripple-theme--light(#aaa);
+}
+button.mat-sort-header-button {
+  outline: none;
+  :focus {
+    outline: none;
+  }
+}
+.dt-filters.mat-accordion .mat-expansion-panel:last-of-type {
+  //border-bottom-left-radius: 0;
+  //border-bottom-right-radius: 0;
+  border-radius: 0;
+  border-bottom: rgba(0, 0, 0, 0.12) 1px solid;
+
+}
+
+.dt-filters.mat-accordion {
+  //.mat-expansion-panel-header {
+  //  height: 4.8rem;
+  //}
+  .mat-expansion-panel-header.mat-expanded {
+    background-color: rgba(0, 0, 0, 0.05);
+    //height: 4.8rem;
+  }
+  .mat-expansion-panel-body {
+    padding: 1.6rem 2.4rem;
+  }
+}
