@@ -4,7 +4,6 @@
   padding: .5rem;
   flex: 1;
   width: 100%;
-  max-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -12,7 +11,7 @@
 .sidebar-nav {
   .sidebar-nav__item {
     position: relative;
-    margin-bottom: .1rem;
+    margin-bottom: .2rem;
     background-color: inherit;
     cursor: pointer;
     display: flex;
@@ -20,16 +19,23 @@
     justify-content: flex-start;
     align-items: center;
     overflow-x: hidden;
+    outline: none;
+    transition: all .3s ease-in-out;
     &:hover {
       cursor: pointer;
       background-color: rgba($app-light-color, .1);
-      transition: all .3s ease-out;
     }
     &:active,
     &:not(:disabled):not(.disabled):active:focus {
       background-color: rgba($app-light-color, .2);
-      border-color: rgba($app-light-color, .4);
-      transition: all .3s ease-out;
+    }
+    &.sidebar-nav__item--active {
+      background-color: rgba($app-light-color, .1);
+      box-shadow: 0 0 0 .2rem rgba($app-light-color, .15);
+    }
+    &:hover.sidebar-nav__item--active {
+      background-color: rgba($app-light-color, .15);
+
     }
   }
   .sidebar-nav__icon {

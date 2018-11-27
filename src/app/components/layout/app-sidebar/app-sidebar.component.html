@@ -5,18 +5,22 @@
   <ul class="list-group sidebar-nav">
 
     <li class="list-group-item sidebar-nav__item"
-        (click)="navigateTo()"
         matTooltip="Dashboard"
-        [matTooltipPosition]="'right'">
+        [matTooltipPosition]="'right'"
+        routerLink="/dashboard"
+        routerLinkActive="sidebar-nav__item--active"
+        [routerLinkActiveOptions]="{ exact:true }">
       <div class="sidebar-nav__icon">
         <span class="mdi mdi-monitor-dashboard"></span>
       </div>
       <div class="sidebar-nav__text">Dashboard</div>
     </li>
     <li class="list-group-item sidebar-nav__item"
-        (click)="navigateTo('/example')"
         matTooltip="Example"
-        [matTooltipPosition]="'right'">
+        [matTooltipPosition]="'right'"
+        routerLink="/example"
+        routerLinkActive="sidebar-nav__item--active"
+        [routerLinkActiveOptions]="{ exact:true }">
       <div class="sidebar-nav__icon">
         <span class="mdi mdi-file-find"></span>
       </div>

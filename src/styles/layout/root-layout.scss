@@ -2,7 +2,8 @@ app-auth, .root-page-layout {
   padding: 0;
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: row;
   .app-page-layout__container {
@@ -16,10 +17,11 @@ app-auth, .root-page-layout {
   width: 100%;
   background-color: $app-light-color;
   padding: 1.5rem .5rem;
+  overflow-y: auto;
 }
 
 $sidebar-width: 25rem;
-app-page-layout {
+.app-page-layout {
   padding: 0;
   position: relative;
   width: 100%;
@@ -81,6 +83,7 @@ app-page-layout {
     display: flex;
     flex-direction: row;
     z-index: 1;
+    overflow: hidden;
   }
   .app-page-layout__footer {
     height: 6rem;

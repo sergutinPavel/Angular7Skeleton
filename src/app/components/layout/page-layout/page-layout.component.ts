@@ -10,7 +10,7 @@ import { MConfirmComponent } from '../../modals/confirm/confirm.component';
 
 
 @Component({
-  selector: 'app-page-layout',
+  selector: 'app-page-layout.app-page-layout',
   templateUrl: './page-layout.component.html',
   styleUrls: ['./page-layout.component.scss']
 })

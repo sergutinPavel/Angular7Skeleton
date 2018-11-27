@@ -3,27 +3,14 @@ import { environment } from '../environments/environment';
 // libs
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import {
+  NgModule,
+  CUSTOM_ELEMENTS_SCHEMA,
+} from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  MatButtonModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatCheckboxModule,
-  MatDialogModule,
-  MatTableModule,
-  MatPaginatorModule,
-  MatSortModule,
-  MatProgressSpinnerModule,
-  MatExpansionModule,
-  MatSelectModule,
-  MatTabsModule,
-  MatTooltipModule,
-  MatRippleModule,
-} from '@angular/material';
 // store
 import { reducers, metaReducers } from './store';
 import { RootEffects } from './store/root.effects';
@@ -33,6 +20,7 @@ import { TokenInterceptor } from './services/token.interceptor';
 import { AuthService } from './store/auth/auth.service';
 import { GeneralService } from './store/general/general.service';
 // modules
+import { MaterialModule } from './material.module';
 import { Routing } from './app-routing.module';
 // modals
 import { modals } from './components/modals';
@@ -72,21 +60,7 @@ import { ExampleComponent } from './components/pages/example/example.component';
     StoreModule.forRoot(reducers, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     RootEffects,
-    // angular material
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatDialogModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatProgressSpinnerModule,
-    MatExpansionModule,
-    MatSelectModule,
-    MatTabsModule,
-    MatTooltipModule,
-    MatRippleModule,
+    MaterialModule,
   ],
   providers: [
     AuthGuard,
@@ -95,7 +69,8 @@ import { ExampleComponent } from './components/pages/example/example.component';
     GeneralService,
     AuthService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 }

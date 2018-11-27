@@ -3,8 +3,9 @@ html {
 }
 body {
   @include primary-font();
-  overflow: hidden;
+  //overflow: hidden;
   font-size: 1.6rem;
+  max-height: 100vh;
 }
 
 @media all and (min-width: 2200px) {
