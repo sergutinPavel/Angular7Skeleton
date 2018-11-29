@@ -21,7 +21,9 @@
     <app-sidebar class="app-sidebar app-page-layout__sidebar"
                  [ngClass]="{'open': expandSidebar}">
     </app-sidebar>
-    <router-outlet></router-outlet>
+    <ng-scrollbar>
+      <router-outlet></router-outlet>
+    </ng-scrollbar>
   </main>
   <footer class="app-page-layout__footer">footer</footer>
 </div>

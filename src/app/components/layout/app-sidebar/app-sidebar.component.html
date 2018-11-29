@@ -2,32 +2,35 @@
   <!--app-sidebar works!-->
 
   <!--<button (click)="toggleSidebar()">close</button>-->
-  <ul class="list-group sidebar-nav">
+  <ng-scrollbar>
+    <ul class="list-group sidebar-nav">
 
-    <li class="list-group-item sidebar-nav__item"
-        matTooltip="Dashboard"
-        [matTooltipPosition]="'right'"
-        routerLink="/dashboard"
-        routerLinkActive="sidebar-nav__item--active"
-        [routerLinkActiveOptions]="{ exact:true }">
-      <div class="sidebar-nav__icon">
-        <span class="mdi mdi-monitor-dashboard"></span>
-      </div>
-      <div class="sidebar-nav__text">Dashboard</div>
-    </li>
-    <li class="list-group-item sidebar-nav__item"
-        matTooltip="Example"
-        [matTooltipPosition]="'right'"
-        routerLink="/example"
-        routerLinkActive="sidebar-nav__item--active"
-        [routerLinkActiveOptions]="{ exact:true }">
-      <div class="sidebar-nav__icon">
-        <span class="mdi mdi-file-find"></span>
-      </div>
-      <div class="sidebar-nav__text">Example</div>
-    </li>
+      <li class="list-group-item sidebar-nav__item"
+          matTooltip="Dashboard"
+          [matTooltipPosition]="'right'"
+          routerLink="/dashboard"
+          routerLinkActive="sidebar-nav__item--active"
+          [routerLinkActiveOptions]="{ exact: true }">
+        <div class="sidebar-nav__icon">
+          <span class="mdi mdi-monitor-dashboard"></span>
+        </div>
+        <div class="sidebar-nav__text">Dashboard</div>
+      </li>
+      <li class="list-group-item sidebar-nav__item"
+          matTooltip="Example"
+          [matTooltipPosition]="'right'"
+          routerLink="/example"
+          routerLinkActive="sidebar-nav__item--active"
+          [routerLinkActiveOptions]="{ exact: true }">
+        <div class="sidebar-nav__icon">
+          <span class="mdi mdi-file-find"></span>
+        </div>
+        <div class="sidebar-nav__text">Example</div>
+      </li>
 
-  </ul>
+    </ul>
+  </ng-scrollbar>
+
 
 </nav>
 

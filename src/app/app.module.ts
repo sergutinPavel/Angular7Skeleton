@@ -20,6 +20,7 @@ import { TokenInterceptor } from './services/token.interceptor';
 import { AuthService } from './store/auth/auth.service';
 import { GeneralService } from './store/general/general.service';
 // modules
+import { NgScrollbarModule } from 'ngx-scrollbar';
 import { MaterialModule } from './material.module';
 import { Routing } from './app-routing.module';
 // modals
@@ -60,6 +61,7 @@ import { ExampleComponent } from './components/pages/example/example.component';
     StoreModule.forRoot(reducers, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     RootEffects,
+    NgScrollbarModule,
     MaterialModule,
   ],
   providers: [
